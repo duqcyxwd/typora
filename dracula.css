@@ -455,28 +455,51 @@ li .mathjax-block, li p {
   top: auto;
 }
 
-.md-task-list-item > input:before {
+
+/* checkbox */
+input[type="checkbox"]:before {
   content: "";
   display: inline-block;
-  width: 0.875rem;
-  height: 0.875rem;
+  width: 1.2rem;
+  height: 1.2rem;
   vertical-align: middle;
   text-align: center;
-  border: 0px solid #b8bfc6;
-  border-radius: 35%;
-  background-color: #363b40;
-  margin-top: -1rem;
-  margin-top: -.4rem;
+/*   border: 0.1px solid #b8bfc6; */
+  border: 0.1px solid rgba(80, 250, 123, 0.37);
+  border-radius: 3px;
+  margin-top: -0.5rem;
+  margin-left: -0.2rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before {
-  content: "\221A";
-  /*◘*/
-  font-size: 0.625rem;
-/*   line-height: 0.5rem; */
+/* checkbox hover */
+input[type="checkbox"]:not([disabled]):not(:checked):hover:before {
+  content: "\2713";
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  color: var(--text-color3);
+  background-color: var(--dracula-section);
+}
+
+/* checkbox checked*/
+input[type="checkbox"]:checked:before {
+  content: "\2713";
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  color: var(--dracula-foreground);
   color: #dedede;
 }
+
+/* checkbox checked hover*/
+input[type="checkbox"]:checked:hover:before {
+  content: "\2713";
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  background-color: var(--dracula-section);
+  color: var(--dracula-green);
+  color: var(--dracula-foreground);
+}
+
 
 .CodeMirror-gutters {
   background: transparent;
